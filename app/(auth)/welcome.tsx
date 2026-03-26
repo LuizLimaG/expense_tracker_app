@@ -6,14 +6,20 @@ import { colors, spacingX, spacingY } from "@/constants/theme";
 import { verticalScale } from "@/utils/styling";
 import Button from "@/components/Button";
 import Animated, { FadeIn, FadeInDown } from "react-native-reanimated";
+import { useRouter } from "expo-router";
 
-const welcome = () => {
+const Welcome = () => {
+  const router = useRouter();
+
   return (
     <ScreenWrapper>
       <View style={styles.container}>
         <View style={{ gap: 20 }}>
-          <TouchableOpacity style={styles.loginButton}>
-            <Typo size={15} fontWeight={"500"}>
+          <TouchableOpacity
+            onPress={() => router.push("/(auth)/login")}
+            style={styles.loginButton}
+          >
+            <Typo size={15} fontWeight={'bold'}>
               Login
             </Typo>
           </TouchableOpacity>
@@ -58,7 +64,7 @@ const welcome = () => {
               .damping(50)}
             style={styles.buttonContainer}
           >
-            <Button>
+            <Button onPress={() => router.push("/(auth)/register")}>
               <Typo size={18} color={colors.neutral900} fontWeight={"600"}>
                 Get started
               </Typo>
@@ -70,7 +76,7 @@ const welcome = () => {
   );
 };
 
-export default welcome;
+export default Welcome;
 
 const styles = StyleSheet.create({
   container: {
