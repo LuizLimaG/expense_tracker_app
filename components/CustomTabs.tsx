@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
   tabbar: {
     flexDirection: "row",
     width: "100%",
-    height: Platform.OS === "ios" ? verticalScale(73) : verticalScale(55),
+    height: Platform.OS === "ios" ? verticalScale(73) : verticalScale(70),
     backgroundColor: colors.neutral800,
     justifyContent: "space-around",
     alignItems: "center",
